@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.database
+    container_name: beachsound-mysql
+    ports:
+      - "3306:3306"
+    
+

@@ -1,0 +1,6 @@
+FROM openjdk:21
+LABEL authors="josueTeo"
+
+COPY ./target/oceantechsoundproject-1.0-SNAPSHOT.jar /app/oceantechsoundproject.jar
+
+CMD ["java", "-jar", "/app/oceantechsoundproject.jar"]
