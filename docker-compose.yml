@@ -8,5 +8,3 @@ services:
     container_name: beachsound-mysql
     ports:
       - "3306:3306"
-    
-
