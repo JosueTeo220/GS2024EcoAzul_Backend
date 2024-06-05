@@ -1,4 +1,4 @@
-package com.fiap.beachsound.model;
+package com.fiap.saveourshore.model;
 
 
 import jakarta.persistence.Id;

@@ -1,7 +1,7 @@
-package com.fiap.beachsound.controller;
+package com.fiap.saveourshore.controller;
 
-import com.fiap.beachsound.model.Praia;
-import com.fiap.beachsound.service.PraiaService;
+import com.fiap.saveourshore.model.Praia;
+import com.fiap.saveourshore.service.PraiaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -96,6 +96,15 @@ public class PraiaController {
         try {
             praiaService.markPraiaAsLimpa(id);
             return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+    @GetMapping("/count")
+    public ResponseEntity<Long> getPraiaCount() {
+        try {
+            long count = praiaService.countPraias();
+            return ResponseEntity.ok(count);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

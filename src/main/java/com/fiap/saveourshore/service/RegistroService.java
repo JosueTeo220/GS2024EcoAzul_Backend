@@ -1,7 +1,7 @@
-package com.fiap.beachsound.service;
+package com.fiap.saveourshore.service;
 
-import com.fiap.beachsound.dao.IRegistroDAO;
-import com.fiap.beachsound.model.Registro;
+import com.fiap.saveourshore.dao.IRegistroDAO;
+import com.fiap.saveourshore.model.Registro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

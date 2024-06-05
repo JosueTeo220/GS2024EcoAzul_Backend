@@ -1,6 +1,6 @@
-package com.fiap.beachsound.service;
-import com.fiap.beachsound.dao.IPraiaDAO;
-import com.fiap.beachsound.model.Praia;
+package com.fiap.saveourshore.service;
+import com.fiap.saveourshore.dao.IPraiaDAO;
+import com.fiap.saveourshore.model.Praia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -47,5 +47,8 @@ public class PraiaService {
             praia.setPoluida(false);
             praiaDAO.update(praia);
         }
+    }
+    public long countPraias(){
+        return praiaDAO.count();
     }
 }

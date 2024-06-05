@@ -1,6 +1,6 @@
-package com.fiap.beachsound.dao;
+package com.fiap.saveourshore.dao;
 
-import com.fiap.beachsound.model.Ong;
+import com.fiap.saveourshore.model.Ong;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;

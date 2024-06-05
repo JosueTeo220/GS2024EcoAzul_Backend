@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e3a4c06a-9e7f-4095-82a2-4dbbf772657f",
-		"name": "beatchSoundApi",
+		"name": "SaveOurShoreRequest's",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19211357"
 	},
@@ -98,6 +98,26 @@
 					"port": "8080",
 					"path": [
 						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_NumeroDePraias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/praias/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias",
+						"count"
 					]
 				}
 			},

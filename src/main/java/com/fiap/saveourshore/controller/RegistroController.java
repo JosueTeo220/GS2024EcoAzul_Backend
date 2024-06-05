@@ -1,7 +1,7 @@
-package com.fiap.beachsound.controller;
+package com.fiap.saveourshore.controller;
 
-import com.fiap.beachsound.model.Registro;
-import com.fiap.beachsound.service.RegistroService;
+import com.fiap.saveourshore.model.Registro;
+import com.fiap.saveourshore.service.RegistroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

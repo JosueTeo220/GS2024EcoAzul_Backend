@@ -1,6 +1,6 @@
-package com.fiap.beachsound.dao;
+package com.fiap.saveourshore.dao;
 
-import com.fiap.beachsound.model.Registro;
+import com.fiap.saveourshore.model.Registro;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.fiap.beachsound.service;
+package com.fiap.saveourshore.service;
 
-import com.fiap.beachsound.dao.IOngDAO;
-import com.fiap.beachsound.model.Ong;
+import com.fiap.saveourshore.dao.IOngDAO;
+import com.fiap.saveourshore.model.Ong;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

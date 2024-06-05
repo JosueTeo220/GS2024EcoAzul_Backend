@@ -1,6 +1,5 @@
-package com.fiap.beachsound;
+package com.fiap.saveourshore;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

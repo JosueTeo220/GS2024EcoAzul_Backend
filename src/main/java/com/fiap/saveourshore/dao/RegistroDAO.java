@@ -1,6 +1,6 @@
-package com.fiap.beachsound.dao;
+package com.fiap.saveourshore.dao;
 
-import com.fiap.beachsound.model.Registro;
+import com.fiap.saveourshore.model.Registro;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;

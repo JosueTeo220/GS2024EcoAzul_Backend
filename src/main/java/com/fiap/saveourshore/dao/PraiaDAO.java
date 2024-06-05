@@ -1,6 +1,6 @@
-package com.fiap.beachsound.dao;
+package com.fiap.saveourshore.dao;
 
-import com.fiap.beachsound.model.Praia;
+import com.fiap.saveourshore.model.Praia;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
@@ -31,7 +31,10 @@ public class PraiaDAO implements IPraiaDAO {
     public List<Praia> findAllPoluidas() {
         return entityManager.createQuery("from Praia where poluida = true ", Praia.class).getResultList();
     }
-
+    @Override
+    public long count() {
+        return entityManager.createQuery("SELECT COUNT(p) FROM Praia p", Long.class).getSingleResult();
+    }
     @Override
     public void update(Praia praia) {
         entityManager.merge(praia);

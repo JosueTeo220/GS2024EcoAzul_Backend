@@ -1,7 +1,7 @@
-package com.fiap.beachsound.controller;
+package com.fiap.saveourshore.controller;
 
-import com.fiap.beachsound.model.Ong;
-import com.fiap.beachsound.service.OngService;
+import com.fiap.saveourshore.model.Ong;
+import com.fiap.saveourshore.service.OngService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

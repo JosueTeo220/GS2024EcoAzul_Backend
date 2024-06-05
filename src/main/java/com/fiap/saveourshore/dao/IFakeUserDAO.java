@@ -1,6 +1,6 @@
-package com.fiap.beachsound.dao;
+package com.fiap.saveourshore.dao;
 
-import com.fiap.beachsound.model.FakeUser;
+import com.fiap.saveourshore.model.FakeUser;
 
 public interface IFakeUserDAO {
     void save(FakeUser fakeUser);
