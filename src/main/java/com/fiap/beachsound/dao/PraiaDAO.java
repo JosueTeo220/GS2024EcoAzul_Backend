@@ -27,6 +27,10 @@ public class PraiaDAO implements IPraiaDAO {
     public List<Praia> findAll() {
         return entityManager.createQuery("from Praia", Praia.class).getResultList();
     }
+    @Override
+    public List<Praia> findAllPoluidas() {
+        return entityManager.createQuery("from Praia where poluida = true ", Praia.class).getResultList();
+    }
 
     @Override
     public void update(Praia praia) {

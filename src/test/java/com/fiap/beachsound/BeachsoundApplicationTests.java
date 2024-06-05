@@ -8,6 +8,7 @@ class BeachsoundApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

@@ -6,6 +6,8 @@ public interface IPraiaDAO {
     void save(Praia praia);
     Praia findById(Long id);
     List<Praia> findAll();
+
+    List<Praia> findAllPoluidas();
     void update(Praia praia);
     void delete(Long id);
 }

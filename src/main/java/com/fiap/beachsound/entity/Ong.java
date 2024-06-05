@@ -15,16 +15,16 @@ public class Ong {
     private String nome;
     private String areaAtuacao;
 
-    // Construtor padrão
+    private boolean estaAtuando;
     public Ong() {}
 
-    // Construtor com parâmetros
-    public Ong(String nome, String areaAtuacao) {
+    public Ong(Long id, String nome, String areaAtuacao, boolean estaAtuando) {
+        this.id = id;
         this.nome = nome;
         this.areaAtuacao = areaAtuacao;
+        this.estaAtuando = estaAtuando;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -47,5 +47,13 @@ public class Ong {
 
     public void setAreaAtuacao(String areaAtuacao) {
         this.areaAtuacao = areaAtuacao;
+    }
+
+    public boolean isEstaAtuando() {
+        return estaAtuando;
+    }
+
+    public void setEstaAtuando(boolean estaAtuando) {
+        this.estaAtuando = estaAtuando;
     }
 }

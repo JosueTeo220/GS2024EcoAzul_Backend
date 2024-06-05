@@ -22,7 +22,10 @@ public class OngController {
     public Ong getOngById(@PathVariable Long id) {
         return ongService.getOngById(id);
     }
-
+    @GetMapping("/atuando")
+    public List<Ong> getAllOngsAtuando(){
+        return ongService.getAllOngsAtuando();
+    }
     @PostMapping
     public void createOng(@RequestBody Ong ong) {
         ongService.saveOng(ong);

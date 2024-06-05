@@ -29,6 +29,10 @@ public class OngDAO implements IOngDAO {
     }
 
     @Override
+    public List<Ong> findAllAtuando(){
+        return entityManager.createQuery("from Ong where estaAtuando = true ", Ong.class).getResultList();
+    }
+    @Override
     public void update(Ong ong) {
         entityManager.merge(ong);
     }

@@ -17,6 +17,11 @@ public class PraiaController {
         return praiaService.getAllPraias();
     }
 
+    @GetMapping("/poluida")
+    public List<Praia> getPraiaPoluida(){
+        return praiaService.getPraiaPoluida();
+    }
+
     @GetMapping("/{id}")
     public Praia getPraiaById(@PathVariable Long id) {
         return praiaService.getPraiaById(id);
@@ -32,7 +37,6 @@ public class PraiaController {
         praia.setId(id);
         praiaService.updatePraia(praia);
     }
-
     @DeleteMapping("/{id}")
     public void deletePraia(@PathVariable Long id) {
         praiaService.deletePraia(id);
@@ -41,5 +45,10 @@ public class PraiaController {
     @PutMapping("/poluida/{id}")
     public void markPraiaAsPoluida(@PathVariable Long id) {
         praiaService.markPraiaAsPoluida(id);
+    }
+
+    @PutMapping("/limpa/{id}")
+    public void markPraiaAsLimpa(@PathVariable Long id) {
+        praiaService.markPraiaAsLimpa(id);
     }
 }

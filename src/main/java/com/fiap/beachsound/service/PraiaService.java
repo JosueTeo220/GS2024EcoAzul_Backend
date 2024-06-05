@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-// PraiaService.java
 @Service
 public class PraiaService {
     @Autowired
@@ -17,6 +16,10 @@ public class PraiaService {
 
     public Praia getPraiaById(Long id) {
         return praiaDAO.findById(id);
+    }
+    
+    public List<Praia> getPraiaPoluida(){
+        return praiaDAO.findAllPoluidas();
     }
 
     public void savePraia(Praia praia) {
@@ -35,6 +38,13 @@ public class PraiaService {
         Praia praia = getPraiaById(id);
         if (praia != null) {
             praia.setPoluida(true);
+            praiaDAO.update(praia);
+        }
+    }
+    public void markPraiaAsLimpa(Long id) {
+        Praia praia = getPraiaById(id);
+        if (praia != null) {
+            praia.setPoluida(false);
             praiaDAO.update(praia);
         }
     }

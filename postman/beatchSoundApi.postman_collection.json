@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "e3a4c06a-9e7f-4095-82a2-4dbbf772657f",
+		"name": "beatchSoundApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19211357"
+	},
+	"item": [
+		{
+			"name": "GET_Praias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/praias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Ongs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ongs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ongs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_PraiasPoluidas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/praias/poluida",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias",
+						"poluida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_OngsAtuando",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ongs/atuando",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ongs",
+						"atuando"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_Praias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Praia Grande\",\r\n    \"cidade\": \"Sao Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"poluida\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/praias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_Ongs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Ong teste\",\r\n    \"areaAtuacao\": \"area_teste\",\r\n    \"estaAtuando\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ongs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ongs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_FakeUserAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"admin\",\r\n  \"fakepassword\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/fakeuser/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fakeuser",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_AtualizarPraias",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Praia Grande\",\r\n    \"cidade\": \"Sao Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"poluida\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/praias/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_PraiaPoluida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/praias/poluida/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias",
+						"poluida",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_PraiaLimpa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/praias/limpa/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias",
+						"limpa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_ExcluirPraias",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/praias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"praias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_ExcluirOngs",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ongs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ongs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

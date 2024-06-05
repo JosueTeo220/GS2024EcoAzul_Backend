@@ -7,6 +7,7 @@ public interface IOngDAO {
     void save(Ong ong);
     Ong findById(Long id);
     List<Ong> findAll();
+    List<Ong> findAllAtuando();
     void update(Ong ong);
     void delete(Long id);
 }
