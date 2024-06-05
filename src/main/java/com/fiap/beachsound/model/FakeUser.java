@@ -1,4 +1,4 @@
-package com.fiap.beachsound.entity;
+package com.fiap.beachsound.model;
 
 
 import jakarta.persistence.*;

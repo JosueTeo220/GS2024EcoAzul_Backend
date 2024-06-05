@@ -1,6 +1,6 @@
 package com.fiap.beachsound.dao;
 
-import com.fiap.beachsound.entity.Ong;
+import com.fiap.beachsound.model.Ong;
 import java.util.List;
 
 public interface IOngDAO {

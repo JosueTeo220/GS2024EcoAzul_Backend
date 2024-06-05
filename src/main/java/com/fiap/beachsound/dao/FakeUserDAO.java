@@ -1,6 +1,6 @@
 package com.fiap.beachsound.dao;
 
-import com.fiap.beachsound.entity.FakeUser;
+import com.fiap.beachsound.model.FakeUser;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;

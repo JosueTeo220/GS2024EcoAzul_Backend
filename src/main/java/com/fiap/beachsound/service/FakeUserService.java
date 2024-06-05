@@ -1,7 +1,7 @@
 package com.fiap.beachsound.service;
 
 import com.fiap.beachsound.dao.IFakeUserDAO;
-import com.fiap.beachsound.entity.FakeUser;
+import com.fiap.beachsound.model.FakeUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

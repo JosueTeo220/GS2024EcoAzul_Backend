@@ -1,6 +1,6 @@
 package com.fiap.beachsound.dao;
 
-import com.fiap.beachsound.entity.Praia;
+import com.fiap.beachsound.model.Praia;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;

@@ -1,6 +1,6 @@
 package com.fiap.beachsound.service;
 import com.fiap.beachsound.dao.IPraiaDAO;
-import com.fiap.beachsound.entity.Praia;
+import com.fiap.beachsound.model.Praia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

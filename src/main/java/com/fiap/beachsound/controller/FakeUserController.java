@@ -1,6 +1,6 @@
 package com.fiap.beachsound.controller;
 
-import com.fiap.beachsound.entity.FakeUser;
+import com.fiap.beachsound.model.FakeUser;
 import com.fiap.beachsound.service.FakeUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

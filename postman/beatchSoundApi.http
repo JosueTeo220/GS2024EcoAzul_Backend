@@ -1,0 +1,106 @@
+# beatchSoundApi
+
+###
+# @name GET_Praias
+GET http://localhost:8080/praias
+
+###
+# @name GET_Ongs
+GET http://localhost:8080/ongs
+
+###
+# @name GET_PraiasPoluidas
+GET http://localhost:8080/praias/poluida
+
+###
+# @name GET_OngsAtuando
+GET http://localhost:8080/ongs/atuando
+
+###
+# @name GET_Registros
+GET http://localhost:8080/registro
+
+###
+# @name POST_Praias
+POST http://localhost:8080/praias
+Content-Type: application/json
+
+{
+  "nome": "Praia Grande",
+  "cidade": "Sao Paulo",
+  "estado": "SP",
+  "poluida": true
+}
+
+###
+# @name POST_Ongs
+POST http://localhost:8080/ongs
+Content-Type: application/json
+
+{
+  "nome": "Ong teste",
+  "areaAtuacao": "area_teste",
+  "estaAtuando": true
+}
+
+###
+# @name POST_SalvarRegistro
+POST http://localhost:8080/registro/salvar
+Content-Type: application/json
+
+{
+  "nomePessoa": "ANA",
+  "cpf": "552.434.320-32",
+  "statusPendente": true,
+  "descricao": "ta do seu lado ae o",
+  "dataReport": "2024-06-25",
+  "dataFinalizado": null,
+  "praia": {
+    "id": 1
+  },
+  "ong": {
+    "id": 1
+  }
+}
+
+###
+# @name POST_FakeUserAdmin
+POST http://localhost:8080/fakeuser/verify
+Content-Type: application/json
+
+{
+  "nome": "admin",
+  "fakepassword": "admin"
+}
+
+###
+# @name PUT_AtualizarPraias
+PUT http://localhost:8080/praias/1/
+Content-Type: application/json
+
+{
+  "nome": "Praia Grande",
+  "cidade": "Sao Paulo",
+  "estado": "SP",
+  "poluida": true
+}
+
+###
+# @name PUT_PraiaPoluida
+PUT http://localhost:8080/praias/poluida/1
+
+###
+# @name PUT_PraiaLimpa
+PUT http://localhost:8080/praias/limpa/1
+
+###
+# @name DELETE_ExcluirPraias
+DELETE http://localhost:8080/praias/1
+
+###
+# @name DELETE_ExcluirOngs
+DELETE http://localhost:8080/ongs/1
+
+###
+# @name DELETE_Registro
+DELETE http://localhost:8080/registro/6

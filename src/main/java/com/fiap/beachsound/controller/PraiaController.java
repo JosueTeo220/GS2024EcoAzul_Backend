@@ -1,7 +1,10 @@
 package com.fiap.beachsound.controller;
-import com.fiap.beachsound.entity.Praia;
+
+import com.fiap.beachsound.model.Praia;
 import com.fiap.beachsound.service.PraiaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,46 +12,97 @@ import java.util.List;
 @RestController
 @RequestMapping("/praias")
 public class PraiaController {
+
     @Autowired
     private PraiaService praiaService;
 
     @GetMapping
-    public List<Praia> getAllPraias() {
-        return praiaService.getAllPraias();
+    public ResponseEntity<List<Praia>> getAllPraias() {
+        try {
+            List<Praia> praias = praiaService.getAllPraias();
+            return ResponseEntity.ok(praias);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @GetMapping("/poluida")
-    public List<Praia> getPraiaPoluida(){
-        return praiaService.getPraiaPoluida();
+    public ResponseEntity<List<Praia>> getPraiaPoluida() {
+        try {
+            List<Praia> praias = praiaService.getPraiaPoluida();
+            return ResponseEntity.ok(praias);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @GetMapping("/{id}")
-    public Praia getPraiaById(@PathVariable Long id) {
-        return praiaService.getPraiaById(id);
+    public ResponseEntity<Praia> getPraiaById(@PathVariable Long id) {
+        try {
+            Praia praia = praiaService.getPraiaById(id);
+            if (praia != null) {
+                return ResponseEntity.ok(praia);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @PostMapping
-    public void createPraia(@RequestBody Praia praia) {
-        praiaService.savePraia(praia);
+    public ResponseEntity<Void> createPraia(@RequestBody Praia praia) {
+        try {
+            praiaService.savePraia(praia);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @PutMapping("/{id}")
-    public void updatePraia(@PathVariable Long id, @RequestBody Praia praia) {
-        praia.setId(id);
-        praiaService.updatePraia(praia);
+    public ResponseEntity<Void> updatePraia(@PathVariable Long id, @RequestBody Praia praia) {
+        try {
+            praia.setId(id);
+            praiaService.updatePraia(praia);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
+
     @DeleteMapping("/{id}")
-    public void deletePraia(@PathVariable Long id) {
-        praiaService.deletePraia(id);
+    public ResponseEntity<Void> deletePraia(@PathVariable Long id) {
+        try {
+            praiaService.deletePraia(id);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @PutMapping("/poluida/{id}")
-    public void markPraiaAsPoluida(@PathVariable Long id) {
-        praiaService.markPraiaAsPoluida(id);
+    public ResponseEntity<Void> markPraiaAsPoluida(@PathVariable Long id) {
+        try {
+            praiaService.markPraiaAsPoluida(id);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @PutMapping("/limpa/{id}")
-    public void markPraiaAsLimpa(@PathVariable Long id) {
-        praiaService.markPraiaAsLimpa(id);
+    public ResponseEntity<Void> markPraiaAsLimpa(@PathVariable Long id) {
+        try {
+            praiaService.markPraiaAsLimpa(id);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleException(Exception e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 }

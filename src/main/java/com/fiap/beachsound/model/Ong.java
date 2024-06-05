@@ -1,4 +1,4 @@
-package com.fiap.beachsound.entity;
+package com.fiap.beachsound.model;
 
 
 import jakarta.persistence.Id;
@@ -6,12 +6,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
+import javax.validation.constraints.NotBlank;
+
 
 @Entity
 public class Ong {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "O nome não pode estar em branco")
+
     private String nome;
     private String areaAtuacao;
 
