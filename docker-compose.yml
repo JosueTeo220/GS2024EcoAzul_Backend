@@ -5,6 +5,6 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.database
-    container_name: beachsound-mysql
+    container_name: saveourshore-mysql
     ports:
       - "3306:3306"
