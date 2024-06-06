@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fiap</groupId>
-	<artifactId>saveourshore</artifactId>
+	<artifactId>saveourshoresbackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>beachsound</name>
-	<description>beachsound</description>
+	<name>saveourshores</name>
+	<description>saveourshoresbackend</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
