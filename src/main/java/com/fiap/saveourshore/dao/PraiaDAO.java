@@ -31,6 +31,10 @@ public class PraiaDAO implements IPraiaDAO {
     public List<Praia> findAllPoluidas() {
         return entityManager.createQuery("from Praia where poluida = true ", Praia.class).getResultList();
     }
+    //@Override
+    //public boolean getIsPoluidaById(Long id){
+        //return entityManager.createQuery("select poluida from Praia where id = id").getSingleResult().equals();
+    //}
     @Override
     public long count() {
         return entityManager.createQuery("SELECT COUNT(p) FROM Praia p", Long.class).getSingleResult();
