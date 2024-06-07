@@ -1,6 +1,7 @@
 package com.fiap.saveourshore.controller;
 
 import com.fiap.saveourshore.model.Registro;
+import com.fiap.saveourshore.service.PraiaService;
 import com.fiap.saveourshore.service.RegistroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,9 @@ public class RegistroController {
 
     @Autowired
     private RegistroService registroService;
+
+    @Autowired
+    private PraiaService praiaService;
 
     @GetMapping
     public ResponseEntity<List<Registro>> getAllRegistros() {
@@ -43,11 +47,18 @@ public class RegistroController {
 
     @PostMapping("/salvar")
     public ResponseEntity<Void> createRegistro(@RequestBody Registro registro) {
+
         try {
             if (registro.isValid()) {
                 registroService.save(registro);
                 registroService.updateStatusPendente(registro.getId(), true);
-                return ResponseEntity.status(HttpStatus.CREATED).build();
+                var test = praiaService.getPraiaById(registro.getPraia().getId()).isPoluida();
+                if(!test) {
+                    praiaService.markPraiaAsPoluida(registro.getPraia().getId());
+                    registroService.save(registro);
+                    return ResponseEntity.status(HttpStatus.CREATED).build();
+                }
+                return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).build();
             } else {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }

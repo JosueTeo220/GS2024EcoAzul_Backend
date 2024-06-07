@@ -21,11 +21,11 @@ public class Registro {
     private boolean statusPendente;
     private String descricao;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "praia_id")
     private Praia praia;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "ong_id", nullable = true)
     private Ong ong;
 

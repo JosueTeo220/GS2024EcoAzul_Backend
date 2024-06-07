@@ -5,8 +5,8 @@ ENV MYSQL_PASSWORD=jts220
 ENV MYSQL_ROOT_PASSWORD=admin
 ENV MYSQL_ROOT_HOST=%
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-
 COPY docker/script.sql /docker-entrypoint-initdb.d/
+
 
 RUN echo "[mysqld]" >> /etc/mysql/conf.d/my.cnf && \
     echo "character-set-server=utf8mb4" >> /etc/mysql/conf.d/my.cnf && \
