@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS praias_db;
 
-CREATE DATABASE IF NOT EXISTS praias_db;
+CREATE DATABASE IF NOT EXISTS praias_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;;
 
 USE praias_db;
 
@@ -28,13 +28,13 @@ CREATE TABLE IF NOT EXISTS fakeuser(
 CREATE TABLE IF NOT EXISTS registro (
                                         id BIGINT AUTO_INCREMENT PRIMARY KEY,
                                         nome_pessoa VARCHAR(30) NOT NULL,
-                                        cpf VARCHAR(11) NOT NULL,
+                                        cpf VARCHAR(11) NOT NULL ,
                                         data_report DATE NOT NULL,
                                         data_finalizado DATE,
                                         status_pendente BOOLEAN NOT NULL,
                                         descricao VARCHAR(255) NOT NULL,
                                         praia_id BIGINT NOT NULL,
-                                        ong_id BIGINT NOT NULL,
+                                        ong_id BIGINT,
                                         FOREIGN KEY (praia_id) REFERENCES praia(id),
                                         FOREIGN KEY (ong_id) REFERENCES ong(id)
 );
@@ -47,9 +47,3 @@ INSERT INTO ong (nome, area_atuacao,esta_atuando) VALUES ('ONG Limpar Mar', 'Lim
 INSERT INTO ong (nome, area_atuacao,esta_atuando) VALUES ('Associação Preservar', 'Preservação ambiental',false);
 
 INSERT INTO fakeuser(nome, fakepassword) VALUES ('admin', 'admin');
-
-INSERT INTO registro (nome_pessoa, cpf,data_report, data_finalizado, status_pendente, descricao,praia_id, ong_id)
-VALUES
-    ('João', '12480238032','2024-06-04', '2024-06-05', true, 'descricao teste', 1, 1),
-    ('Maria', '23602372090','2024-06-05', NULL, false, 'descricao teste',2, 2);
-

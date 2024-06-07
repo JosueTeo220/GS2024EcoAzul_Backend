@@ -55,14 +55,9 @@ Content-Type: application/json
 {
   "nomePessoa": "ANA",
   "cpf": "552.434.320-32",
-  "statusPendente": true,
   "descricao": "ta do seu lado ae o",
   "dataReport": "2024-06-25",
-  "dataFinalizado": null,
   "praia": {
-    "id": 1
-  },
-  "ong": {
     "id": 1
   }
 }
@@ -98,6 +93,15 @@ PUT http://localhost:8080/praias/poluida/1
 PUT http://localhost:8080/praias/limpa/1
 
 ###
+# @name PUT_SetarOngParaRegistro
+PUT http://localhost:8080/registro/1/set-ong/1
+
+###
+# @name PUT_AlterarStatusPendendeFinalizado
+PUT http://localhost:8080/registro/1/set-status-pendente?
+    statusPendente=false
+
+###
 # @name DELETE_ExcluirPraias
 DELETE http://localhost:8080/praias/1
 
@@ -107,4 +111,4 @@ DELETE http://localhost:8080/ongs/1
 
 ###
 # @name DELETE_Registro
-DELETE http://localhost:8080/registro/6
+DELETE http://localhost:8080/registro/1

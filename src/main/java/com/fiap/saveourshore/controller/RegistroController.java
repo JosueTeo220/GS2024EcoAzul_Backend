@@ -46,6 +46,7 @@ public class RegistroController {
         try {
             if (registro.isValid()) {
                 registroService.save(registro);
+                registroService.updateStatusPendente(registro.getId(), true);
                 return ResponseEntity.status(HttpStatus.CREATED).build();
             } else {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
