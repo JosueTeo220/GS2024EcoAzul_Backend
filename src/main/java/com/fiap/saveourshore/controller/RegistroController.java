@@ -50,8 +50,10 @@ public class RegistroController {
 
         try {
             if (registro.isValid()) {
-                var test = praiaService.getPraiaById(registro.getPraia().getId()).isPoluida();
-                if(!test) {
+                registroService.save(registro);
+                registroService.updateStatusPendente(registro.getId(), true);
+                var poluidaValid = praiaService.getPraiaById(registro.getPraia().getId()).isPoluida();
+                if(!poluidaValid) {
                     praiaService.markPraiaAsPoluida(registro.getPraia().getId());
                     registroService.save(registro);
                     return ResponseEntity.status(HttpStatus.CREATED).build();

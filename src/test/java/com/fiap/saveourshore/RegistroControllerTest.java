@@ -61,7 +61,7 @@ class RegistroControllerTest {
 
     @Test
     void testCreateRegistro() throws Exception {
-        String jsonRegistro = "{ \"nomePessoa\": \"Josue\", \"cpf\": \"55243432032\", \"statusPendente\": true, \"descricao\": \"Descrição válida\", \"dataReport\": \"2024-06-25\", \"praia\": { \"id\": 1 }, \"ong\": { \"id\": 1 } }";
+        String jsonRegistro = "{ \"nomePessoa\": \"Josue\", \"cpf\": \"51280660880\", \"descricao\": \"Descrição válida\", \"dataReport\": \"2024-06-25\", \"praia\": { \"id\": 1 },}";
 
         mockMvc.perform(post("/registro/salvar")
                         .contentType(MediaType.APPLICATION_JSON)

@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS praias_db;
 
-CREATE DATABASE IF NOT EXISTS praias_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;;
+CREATE DATABASE IF NOT EXISTS praias_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE praias_db;
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS registro (
                                         status_pendente BOOLEAN NOT NULL,
                                         descricao VARCHAR(255) NOT NULL,
                                         praia_id BIGINT NOT NULL,
-                                        ong_id BIGINT NOT NULL,
+                                        ong_id BIGINT,
                                         FOREIGN KEY (praia_id) REFERENCES praia(id),
                                         FOREIGN KEY (ong_id) REFERENCES ong(id)
 );
@@ -47,4 +47,3 @@ INSERT INTO ong (nome, area_atuacao,esta_atuando) VALUES ('ONG Limpar Mar', 'Lim
 INSERT INTO ong (nome, area_atuacao,esta_atuando) VALUES ('Associação Preservar', 'Preservação ambiental',false);
 
 INSERT INTO fakeuser(nome, fakepassword) VALUES ('admin', 'admin');
-
