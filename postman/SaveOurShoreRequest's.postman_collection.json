@@ -158,7 +158,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\" : \"Ong teste\",\r\n    \"areaAtuacao\": \"area_teste\",\r\n    \"estaAtuando\": true\r\n}",
+					"raw": "{\r\n    \"nome\" : \"Ong teste\",\r\n    \"areaAtuacao\": \"area_teste\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

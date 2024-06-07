@@ -30,6 +30,10 @@ public class OngService {
         ongDAO.update(ong);
     }
 
+    public void updadeStatusAtuando(Ong ong, boolean status){
+        ong.setEstaAtuando(status);
+        ongDAO.update(ong);
+    }
 
     public void deleteOng(Long id) {
         ongDAO.delete(id);

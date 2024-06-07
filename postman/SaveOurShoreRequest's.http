@@ -43,8 +43,7 @@ Content-Type: application/json
 
 {
   "nome": "Ong teste",
-  "areaAtuacao": "area_teste",
-  "estaAtuando": true
+  "areaAtuacao": "area_teste"
 }
 
 ###
