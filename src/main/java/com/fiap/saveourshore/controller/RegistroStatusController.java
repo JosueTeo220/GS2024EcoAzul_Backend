@@ -16,11 +16,11 @@ public class RegistroStatusController {
     private RegistroService registroService;
     @Autowired
     private OngService ongService;
-    private Ong ong;
 
     @PutMapping("/{id}/set-status-pendente")
     public ResponseEntity<String> setStatusPendente(@PathVariable Long id, @RequestParam boolean statusPendente) {
         try {
+            Ong ong = ongService.getOngById(registroService.findById(id).getOng().getId());
             registroService.updateStatusPendente(id, statusPendente);
             ongService.updadeStatusAtuando(ong, false);
             return ResponseEntity.ok().build();
