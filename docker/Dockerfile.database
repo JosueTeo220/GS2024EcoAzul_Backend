@@ -4,18 +4,16 @@ ENV MYSQL_USER=josueTeo
 ENV MYSQL_PASSWORD=jts220
 ENV MYSQL_ROOT_PASSWORD=admin
 ENV MYSQL_ROOT_HOST=%
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+
+RUN echo "[mysqld]" > /etc/mysql/my.cnf && \
+    echo "character-set-server=utf8mb4" >> /etc/mysql/my.cnf && \
+    echo "collation-server=utf8mb4_unicode_ci" >> /etc/mysql/my.cnf && \
+    echo "log_error_verbosity = 3" >> /etc/mysql/my.cnf && \
+    echo "" >> /etc/mysql/my.cnf && \
+    echo "[client]" >> /etc/mysql/my.cnf && \
+    echo "default-character-set=utf8mb4" >> /etc/mysql/my.cnf
+
+# Copy the SQL script for initialization
 COPY docker/script.sql /docker-entrypoint-initdb.d/
 
-
-RUN echo "[mysqld]" >> /etc/mysql/conf.d/my.cnf && \
-    echo "character-set-server=utf8mb4" >> /etc/mysql/conf.d/my.cnf && \
-    echo "collation-server=utf8mb4_unicode_ci" >> /etc/mysql/conf.d/my.cnf && \
-    echo "[client]" >> /etc/mysql/conf.d/my.cnf && \
-    echo "default-character-set=utf8mb4" >> /etc/mysql/conf.d/my.cnf && \
-    echo "[mysql]" >> /etc/mysql/conf.d/my.cnf && \
-    echo "default-character-set=utf8mb4" >> /etc/mysql/conf.d/my.cnf
-RUN echo "log_error_verbosity = 3" >> /etc/mysql/my.cnf
-RUN echo "character-set-server=utf8mb4" >> /etc/mysql/my.cnf
-RUN echo "collation-server=utf8mb4_unicode_ci" >> /etc/mysql/my.cnf
 EXPOSE 3306
