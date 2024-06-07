@@ -8,6 +8,8 @@ public interface IRegistroDAO {
     void save(Registro registro);
     Registro findById(Long id);
     List<Registro> findAll();
+    List<Registro> findAllWithPoluidaPraia();
+    List<Registro> findTop3ByDataFinalizado();
     void update(Registro registro);
     void delete(Long id);
 }

@@ -40,10 +40,46 @@ CREATE TABLE IF NOT EXISTS registro (
 );
 
 
-INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Copacabana', 'Rio de Janeiro', 'Rio', false);
-INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Praia do Futuro', 'Fortaleza', 'Ceará', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Ipanema', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Leblon', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Leme', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Barra da Tijuca', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Prainha', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Grumari', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Flamengo', 'Rio de Janeiro', 'Rio', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('São Conrado', 'Rio de Janeiro', 'Rio', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Pontal', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Vidigal', 'Rio de Janeiro', 'Rio', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Boa Viagem', 'Recife', 'Pernambuco', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Porto de Galinhas', 'Ipojuca', 'Pernambuco', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Maracaípe', 'Ipojuca', 'Pernambuco', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Piedade', 'Jaboatão dos Guararapes', 'Pernambuco', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Candeias', 'Jaboatão dos Guararapes', 'Pernambuco', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Canoa Quebrada', 'Aracati', 'Ceará', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Jericoacoara', 'Jijoca de Jericoacoara', 'Ceará', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Morro Branco', 'Beberibe', 'Ceará', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Meireles', 'Fortaleza', 'Ceará', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Iracema', 'Fortaleza', 'Ceará', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Boa Vista', 'Vila Velha', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Itapoã', 'Vila Velha', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Itaparica', 'Vila Velha', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Camburi', 'Vitória', 'Espírito Santo', true);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Curva da Jurema', 'Vitória', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Guarapari', 'Guarapari', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Enseada Azul', 'Guarapari', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Setiba', 'Guarapari', 'Espírito Santo', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Praia Grande', 'Arraial do Cabo', 'Rio de Janeiro', false);
+INSERT INTO praia (nome, cidade, estado, poluida) VALUES ('Forno', 'Arraial do Cabo', 'Rio de Janeiro', false);
 
-INSERT INTO ong (nome, area_atuacao,esta_atuando) VALUES ('ONG Limpar Mar', 'Limpeza de praias', true);
-INSERT INTO ong (nome, area_atuacao,esta_atuando) VALUES ('Associação Preservar', 'Preservação ambiental',false);
+
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('Projeto Tamar', 'Conservação marinha', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('SOS Mata Atlântica', 'Preservação ambiental', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('Greenpeace Brasil', 'Ativismo ambiental', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('Instituto BiomaBrasil', 'Educação ambiental', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('Guardians of the Sea', 'Proteção marinha', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('Instituto Baleia Jubarte', 'Proteção de baleias', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('EcoSurf', 'Proteção costeira', true);
+INSERT INTO ong (nome, area_atuacao, esta_atuando) VALUES ('Associação MarBrasil', 'Pesquisa marinha', true);
+
 
 INSERT INTO fakeuser(nome, fakepassword) VALUES ('admin', 'admin');

@@ -88,7 +88,25 @@ public class RegistroController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+    @GetMapping("/poluida")
+    public ResponseEntity<List<Registro>> getRegistrosWithPoluidaPraia() {
+        try {
+            List<Registro> registros = registroService.getAllRegistrosWithPoluidaPraia();
+            return ResponseEntity.ok(registros);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
+    @GetMapping("/recentes")
+    public ResponseEntity<List<Registro>> getTop3Recentes() {
+        try {
+            List<Registro> registros = registroService.getTop3ByDataFinalizado();
+            return ResponseEntity.ok(registros);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());

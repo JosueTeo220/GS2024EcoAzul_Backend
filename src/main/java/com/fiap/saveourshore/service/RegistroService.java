@@ -77,5 +77,13 @@ public class RegistroService {
             throw new IllegalArgumentException("Registro not found");
         }
     }
+    @Transactional
+    public List<Registro> getAllRegistrosWithPoluidaPraia() {
+        return registroDAO.findAllWithPoluidaPraia();
+    }
+    @Transactional
+    public List<Registro> getTop3ByDataFinalizado() {
+        return registroDAO.findTop3ByDataFinalizado();
+    }
 
 }

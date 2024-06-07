@@ -40,4 +40,17 @@ public class RegistroDAO implements IRegistroDAO {
             entityManager.remove(registro);
         }
     }
+    @Override
+    public List<Registro> findAllWithPoluidaPraia() {
+        return entityManager.createQuery(
+                        "SELECT r FROM Registro r WHERE r.praia.poluida = true AND r.statusPendente = true  ", Registro.class)
+                .getResultList();
+    }
+    @Override
+    public List<Registro> findTop3ByDataFinalizado() {
+        return entityManager.createQuery(
+                        "SELECT r FROM Registro r WHERE r.dataFinalizado IS NOT NULL ORDER BY r.dataFinalizado DESC", Registro.class)
+                .setMaxResults(3)
+                .getResultList();
+    }
 }
