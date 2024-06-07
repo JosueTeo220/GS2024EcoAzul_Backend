@@ -31,7 +31,7 @@ Content-Type: application/json
 
 {
   "nome": "Praia Grande",
-  "cidade": "Sao Paulo",
+  "cidade": "São Paulo",
   "estado": "SP",
   "poluida": true
 }
@@ -107,4 +107,4 @@ DELETE http://localhost:8080/ongs/1
 
 ###
 # @name DELETE_Registro
-DELETE http://localhost:8080/registro/6
+DELETE http://localhost:8080/registro/1

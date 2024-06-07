@@ -124,10 +124,7 @@ public class Registro {
     }
 
     public boolean isValid() {
-        if (nomePessoa == null || nomePessoa.isEmpty() || cpf == null || cpf.isEmpty() || cpf.matches("([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})\n")) {
-            return false;
-        }
-        return true;
+        return nomePessoa != null && !nomePessoa.isEmpty() && cpf != null && !cpf.isEmpty() && !cpf.matches("([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})\n");
     }
 }
 

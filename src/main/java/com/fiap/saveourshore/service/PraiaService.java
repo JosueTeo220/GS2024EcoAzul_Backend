@@ -22,6 +22,7 @@ public class PraiaService {
         return praiaDAO.findAllPoluidas();
     }
 
+    //public boolean getPraiaPoluidaById(){return praiaDAO.getIsPoluidaById}
     public void savePraia(Praia praia) {
         praiaDAO.save(praia);
     }
