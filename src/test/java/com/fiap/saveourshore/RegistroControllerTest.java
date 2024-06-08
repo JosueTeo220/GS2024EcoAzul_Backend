@@ -1,8 +1,10 @@
 package com.fiap.saveourshore;
 
 import com.fiap.saveourshore.controller.RegistroController;
+import com.fiap.saveourshore.controller.RegistroStatusController;
 import com.fiap.saveourshore.model.Registro;
 import com.fiap.saveourshore.service.RegistroService;
+import com.fiap.saveourshore.service.OngService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -26,13 +28,19 @@ class RegistroControllerTest {
     @Mock
     private RegistroService registroService;
 
+    @Mock
+    private OngService ongService;
+
     @InjectMocks
     private RegistroController registroController;
+
+    @InjectMocks
+    private RegistroStatusController registroStatusController;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(registroController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(registroController, registroStatusController).build();
     }
 
     @Test
@@ -61,7 +69,7 @@ class RegistroControllerTest {
 
     @Test
     void testCreateRegistro() throws Exception {
-        String jsonRegistro = "{ \"nomePessoa\": \"Josue\", \"cpf\": \"51280660880\", \"descricao\": \"Descrição válida\", \"dataReport\": \"2024-06-25\", \"praia\": { \"id\": 1 },}";
+        String jsonRegistro = "{ \"nomePessoa\": \"Josue\", \"cpf\": \"51280660880\", \"descricao\": \"Descrição válida\", \"dataReport\": \"2024-06-25\", \"praia\": { \"id\": 1 } }";
 
         mockMvc.perform(post("/registro/salvar")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -73,7 +81,7 @@ class RegistroControllerTest {
 
     @Test
     void testCreateInvalidRegistro() throws Exception {
-        String jsonRegistro = "{ \"nomePessoa\": \"\", \"cpf\": \"\", \"statusPendente\": true, \"descricao\": \"\", \"dataReport\": \"\", \"praia\": { \"id\": 1 }, \"ong\": { \"id\": 1 } }";
+        String jsonRegistro = "{ \"nomePessoa\": \"\", \"cpf\": \"\", \"descricao\": \"\", \"dataReport\": \"\", \"praia\": { \"id\": 1 } }";
 
         mockMvc.perform(post("/registro/salvar")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -85,7 +93,7 @@ class RegistroControllerTest {
 
     @Test
     void testUpdateRegistro() throws Exception {
-        String jsonRegistro = "{ \"nomePessoa\": \"Josue\", \"cpf\": \"55243432032\", \"statusPendente\": true, \"descricao\": \"Descrição válida\", \"dataReport\": \"2024-06-25\", \"praia\": { \"id\": 1 }, \"ong\": { \"id\": 1 } }";
+        String jsonRegistro = "{ \"nomePessoa\": \"Josue\", \"cpf\": \"55243432032\", \"descricao\": \"Descrição válida\", \"dataReport\": \"2024-06-25\", \"praia\": { \"id\": 1 } }";
 
         mockMvc.perform(put("/registro/1")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -104,5 +112,25 @@ class RegistroControllerTest {
 
         verify(registroService, times(1)).delete(1L);
     }
-}
 
+    @Test
+    void testSetStatusPendente() throws Exception {
+        doNothing().when(registroService).updateStatusPendente(1L, true);
+
+        mockMvc.perform(put("/registro/1/set-status-pendente")
+                        .param("statusPendente", "true"))
+                .andExpect(status().isOk());
+
+        verify(registroService, times(1)).updateStatusPendente(1L, true);
+    }
+
+    @Test
+    void testSetOngForRegistro() throws Exception {
+        doNothing().when(registroService).assignOngToRegistro(1L, 1L);
+
+        mockMvc.perform(put("/registro/1/set-ong/1"))
+                .andExpect(status().isOk());
+
+        verify(registroService, times(1)).assignOngToRegistro(1L, 1L);
+    }
+}
